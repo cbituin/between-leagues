@@ -7,23 +7,17 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './components/error-page/error-page';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  }
-])
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter basename="/">
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
